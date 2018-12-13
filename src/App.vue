@@ -27,4 +27,7 @@ export default {
     body,html {
         background-color: #f6f6f6;
     }
+    #app {
+        min-width: 1280px;
+    }
 </style>

@@ -56,12 +56,13 @@ export default {
           swiperOption: {
               slidesPerView: 3,
               spaceBetween: 20,
+              // centerInsufficientSlides: true,
               pagination: {
                 el: '.swiper-pagination',
                 clickable: true
               },
               autoplay: {
-                  delay: 2000,
+                  delay: 3000,
               },
               loop: true
           }
@@ -77,7 +78,7 @@ export default {
 
 <style lang="less">
     .home {
-        height: 800px;
+        // height: 800px;
         .home-top {
             width: 100%;
             padding: 80px 0;
@@ -94,13 +95,16 @@ export default {
             }
         }
         .home-scroll {
-            height: 354px;
+            // height: 354px;
             .img-box {
-                max-width: 600px;
+                // max-width: 1200px;
                 img {
                     width: 100%;
                 }
             }
+        }
+        .home-body {
+            min-height: 400px;
         }
     }
 </style>
