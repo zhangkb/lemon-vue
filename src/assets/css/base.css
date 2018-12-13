@@ -122,5 +122,5 @@ input[type="number"]+div{
 }
 @font-face {
     font-family: "FuturaLTCondensedBoldOblique";
-    src: url(../ttf/futura-lt-condensed-bold-oblique.ttf);
+    src: url(../fonts/futura-lt-condensed-bold-oblique.ttf);
 }
