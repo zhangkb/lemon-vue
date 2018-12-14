@@ -64,6 +64,34 @@
             </swiper>
         </div>
         <div class="home-body">
+
+            <div class="list-box">
+                <div class="list-header">
+                    <span class="list-date">
+                        2018-12-14
+                    </span>
+                    <h2 class="list-title">
+                        招婚启事：张志杰
+                    </h2>
+                    <p class="list-type">
+                        <span class="list-type-color">
+                            温柔可爱、秀外慧中、出得厅堂、入得厨房
+                        </span>
+                    </p>
+                </div>
+                <div class="list-img">
+                    <img src="../assets/img/timg.jpg" alt="">
+                </div>
+                <div class="list-intro">
+                    <p>
+                        家乡：河南省安阳市 毕业院校：河南科技大学
+                    </p>
+                    <p>
+                        性格温柔可爱、秀外慧中、出得厅堂、入得厨房，欢迎各位小姐姐来撩哦 ^.0!
+                    </p>
+                </div>
+            </div>
+            
             <div class="list-box">
                 <div class="list-header">
                     <span class="list-date">
@@ -91,32 +119,7 @@
                     </p>
                 </div>
             </div>
-            <div class="list-box">
-                <div class="list-header">
-                    <span class="list-date">
-                        2018-12-14
-                    </span>
-                    <h2 class="list-title">
-                        招婚启事：张志杰
-                    </h2>
-                    <p class="list-type">
-                        <span class="list-type-color">
-                            温柔可爱、秀外慧中、出得厅堂、入得厨房
-                        </span>
-                    </p>
-                </div>
-                <div class="list-img">
-                    <img src="../assets/img/timg.jpg" alt="">
-                </div>
-                <div class="list-intro">
-                    <p>
-                        家乡：河南省安阳市 毕业院校：河南科技大学
-                    </p>
-                    <p>
-                        性格温柔可爱、秀外慧中、出得厅堂、入得厨房，欢迎各位小姐姐来撩哦 ^.0!
-                    </p>
-                </div>
-            </div>
+
         </div>
         <div class="home-page-box">
 
