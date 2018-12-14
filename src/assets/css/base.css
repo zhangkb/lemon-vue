@@ -4,7 +4,7 @@ body,p,h1,h2,h3,h4,h5,h6,ul,ol,dl,li,dt,dd{
     padding: 0;
     /*字体设置*/
     /* font-size: 14px; */
-    font-family: "Microsoft Yahei",sans-serif;
+    font-family: 'PingFang SC', 'Hiragino Sans GB', 'Microsoft Yahei', 'WenQuanYi Micro Hei', sans-serif;
     color: #ccc;
     /* 去掉列表的原点 */
     list-style: none;

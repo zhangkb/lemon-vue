@@ -24,6 +24,7 @@ export default {
 </script>
 
 <style>
+    @import 'swiper/dist/css/swiper.css';
     body,html {
         background-color: #f6f6f6;
     }
