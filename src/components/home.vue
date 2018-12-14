@@ -71,6 +71,34 @@
                         2018-12-14
                     </span>
                     <h2 class="list-title">
+                        招婚启事：魏祥
+                    </h2>
+                    <p class="list-type">
+                        <span class="list-type-color">
+                            面若冠玉、玉树临风、风流倜傥
+                        </span>
+                    </p>
+                </div>
+                <div class="list-img">
+                    <img src="../assets/img/57d0d4c41667f.jpg" alt="">
+                </div>
+                <div class="list-intro">
+                    <p>
+                        家乡：安徽省淮北市濉溪县孙疃镇 毕业院校：河南科技大学
+                    </p>
+                    <p>
+                        少时善张目对日，习得火眼金睛。今就读于上海海事大学，其人面若冠玉，玉树临风，风流倜傥。欢迎各位小姐姐来撩哦 ^.0!
+                    </p>
+                </div>
+            </div>
+
+
+            <div class="list-box">
+                <div class="list-header">
+                    <span class="list-date">
+                        2018-12-14
+                    </span>
+                    <h2 class="list-title">
                         招婚启事：张志杰
                     </h2>
                     <p class="list-type">
@@ -91,7 +119,7 @@
                     </p>
                 </div>
             </div>
-            
+
             <div class="list-box">
                 <div class="list-header">
                     <span class="list-date">
