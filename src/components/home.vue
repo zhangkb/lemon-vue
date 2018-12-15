@@ -185,7 +185,7 @@ export default {
 
 <style lang="less">
     .home {
-        // height: 800px;
+        /* // height: 800px; */
         .home-top {
             width: 100%;
             padding: 80px 0;
@@ -202,13 +202,13 @@ export default {
             }
         }
         .home-scroll {
-            // height: 354px;
+            /* // height: 354px; */
             > .swiper-container {
                 padding-bottom: 40px;
             }
             .img-box {
                 position: relative;
-                // max-width: 1200px;
+                /* // max-width: 1200px; */
                 img {
                     width: 100%;
                 }
@@ -307,9 +307,9 @@ export default {
             p {
                 letter-spacing: 0.6px;
                 line-height: 30px;
-                // width: 100%;
+                /* // width: 100%; */
                 text-align: left;
-                // white-space: pre-wrap;
+                /* // white-space: pre-wrap; */
                 word-wrap: break-word;
                 word-break: break-all;
                 color: #333;
