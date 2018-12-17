@@ -7,19 +7,26 @@
 </template>
 
 <script>
+import axios from "axios";
+import qs from "qs";
 export default {
     name: 'Header',
     data () {
         return {
-
+            content: ''
         }
+    },
+    mounted() {
+        this.listArticle();
     },
     methods: {
         listArticle () {
             var _this = this;
-            axios.get("http://120.79.214.223:3000/list", {
+            // 120.79.214.223
+            debugger
+            axios.get("http://120.79.214.223:3000/detail", {
                 params:{
-                    _id: this.$route.query.id
+                    _id: _this.$route.params.id
                 }
             }).then((res) => {
               var data = res.data.data;

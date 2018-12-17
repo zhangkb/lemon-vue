@@ -32,4 +32,5 @@ module.exports = function(app) {
     app.post("/upload", api.upload);
     app.post("/create", api.setArticle);
     app.get("/list", api.meetArticle);
+    app.get("/detail",api.listArticle);
 }

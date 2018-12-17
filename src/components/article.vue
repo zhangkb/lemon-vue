@@ -1,7 +1,7 @@
 <template lang="html">
     <div class="article-body">
         <ul>
-            <li v-for="item in article">
+            <li v-for="item in article" @click="changeUrl(item._id)">
                 <h2>{{ item.title }}</h2>
                 <span>{{item.author }}</span>
                 <span>{{ item.changeDate }}</span>
@@ -41,6 +41,9 @@ export default {
               _this.article = data;
             });
         },
+        changeUrl (id) {
+            window.open('http://localhost:8080/#/list/'+id)
+        }
     },
 }
 </script>

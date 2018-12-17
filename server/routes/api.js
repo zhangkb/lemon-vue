@@ -338,13 +338,6 @@ var setArticle = function(req, res) {
 }
 var meetArticle = function(req, res) {
     res.header("Access-Control-Allow-Origin", "*");
-    const art = new Article({
-        title: req.body.title,
-        author: req.body.name,
-        content: req.body.content,
-        changeDate: new Date()
-    });
-    console.log(req.body)
     // new Promise((resolve, reject) => {
     //     jwt.verify(token, config.secret, function(err, decoded) {
     //         if (err) {
@@ -355,6 +348,43 @@ var meetArticle = function(req, res) {
     //         } else {
                 Article.find({
                     author: req.query.name
+                },{
+                    // content: 0
+                }).then((response) => {
+                    if (!response) {
+                        res.json({
+                            msg: '还没写文章哦',
+                            data: {}
+                        });
+                    }
+                    console.log(response)
+                    res.json({
+                        msg: {
+                            status: 1,
+                            msg: '获取成功'
+                        },
+                        data: response
+                    })
+                });
+
+    //         }
+    //     })
+    // });
+
+}
+var listArticle = function(req, res) {
+    res.header("Access-Control-Allow-Origin", "*");
+    console.log(req.query)
+    // new Promise((resolve, reject) => {
+    //     jwt.verify(token, config.secret, function(err, decoded) {
+    //         if (err) {
+    //             res.json({
+    //                 ok: 0,
+    //                 msg: err
+    //             })
+    //         } else {
+                Article.find({
+                    _id: req.query._id
                 },{
                     content: 0
                 }).then((response) => {
@@ -389,4 +419,5 @@ module.exports = {
     upload: upload,
     setArticle: setArticle,
     meetArticle: meetArticle,
+    listArticle: listArticle
 };
