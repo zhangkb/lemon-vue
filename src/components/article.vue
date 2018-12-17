@@ -42,7 +42,7 @@ export default {
             });
         },
         changeUrl (id) {
-            window.open('http://localhost:8080/#/list/'+id)
+            window.open('http://lemontea.xin/#/list/'+id)
         }
     },
 }

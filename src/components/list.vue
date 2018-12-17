@@ -62,6 +62,7 @@ export default {
         }
         p {
             line-height: 30px;
+            color: #333;
         }
     }
 </style>

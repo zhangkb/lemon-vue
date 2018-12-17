@@ -5,7 +5,7 @@ body,p,h1,h2,h3,h4,h5,h6,ul,ol,dl,li,dt,dd{
     /*字体设置*/
     /* font-size: 14px; */
     font-family: 'PingFang SC', 'Hiragino Sans GB', 'Microsoft Yahei', 'WenQuanYi Micro Hei', sans-serif;
-    color: #ccc;
+    /* color: #333; */
     /* 去掉列表的原点 */
     list-style: none;
     /* 默认鼠标 */
@@ -31,7 +31,7 @@ input,img{
 a,a:active,a:visited{
     /*下划线和颜色*/
     text-decoration: none;
-    color: #ccc;
+    /* color: #ccc; */
 }
 
 a:hover{

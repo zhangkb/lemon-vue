@@ -103,14 +103,10 @@ export default {
               content: this.content,
             })).then((data) => {
               console.log(data)
-              console.log(data.data.data)
-              if (data.data.msg.status == 1) {
-
-              }
-              if (data.data.msg.status != 1) {
-
-              }
-
+            //   console.log(data.data.data)
+                if (data.data.msg && data.data.msg.status === 1) {
+                    window.location.href = 'http://lemontea.xin/#/list/'+ data.data.msg._id;
+                }
             });
         },
     },
@@ -125,6 +121,7 @@ export default {
         .creat-editor {
             // height: 800px;
             background-color: #fff;
+            color: #333;
             p {
                 color: #666;
             }
