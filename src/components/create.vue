@@ -40,9 +40,9 @@ export default {
                     ImageExtend: {
                       loading: true,
                       name: 'foo',
-                      action: 'http://localhost:3000/upload',
+                      action: 'http://120.79.214.223:3000/upload',
                       response: (res) => {
-                        return 'http://localhost:3000' + res.info
+                        return 'http://120.79.214.223:3000' + res.info
                       }
                   },
                   toolbar: {
@@ -97,7 +97,7 @@ export default {
         },
         createArticle () {
             debugger
-            axios.post("http://localhost:3000/create", qs.stringify({
+            axios.post("http://120.79.214.223:3000/create", qs.stringify({
               name: '小可爱',
               title: this.artTitle,
               content: this.content,

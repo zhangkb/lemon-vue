@@ -17,7 +17,7 @@ export default {
     methods: {
         listArticle () {
             var _this = this;
-            axios.get("http://localhost:3000/list", {
+            axios.get("http://120.79.214.223:3000/list", {
                 params:{
                     _id: this.$route.query.id
                 }
