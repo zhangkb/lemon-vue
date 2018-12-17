@@ -1,6 +1,10 @@
 <template lang="html">
     <div class="list-body">
-        <div v-html="content">
+        <div>
+            <h2>{{ title }}</h2>
+            <span>{{ author }}</span><span>{{ changeDate }}</span>
+        </div>
+        <div v-html="content" class="list-code">
 
         </div>
     </div>
@@ -13,7 +17,10 @@ export default {
     name: 'Header',
     data () {
         return {
-            content: ''
+            content: '',
+            title: '',
+            author: '',
+            changeDate: '',
         }
     },
     mounted() {
@@ -23,14 +30,16 @@ export default {
         listArticle () {
             var _this = this;
             // 120.79.214.223
-            debugger
             axios.get("http://120.79.214.223:3000/detail", {
                 params:{
                     _id: _this.$route.params.id
                 }
             }).then((res) => {
               var data = res.data.data;
-              _this.article = data;
+              _this.content = data[0].content;
+              _this.title = data[0].title;
+              _this.author = data[0].author;
+              _this.changeDate = data[0].changeDate;
             });
         },
     },
@@ -39,7 +48,20 @@ export default {
 
 <style lang="less">
     .list-body {
-        width: 1280px;
-        margin: 0 auto;
+        width: 1200px;
+        margin: 40px auto;
+        padding: 25px 40px;
+        background-color: #fff;
+        .list-code {
+            padding: 25px 0;
+        }
+        h2 {
+            color: #333;
+            cursor: pointer;
+            margin: 10px 0;
+        }
+        p {
+            line-height: 30px;
+        }
     }
 </style>

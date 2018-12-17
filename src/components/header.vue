@@ -52,6 +52,10 @@ export default {
             margin-left: 30px;
             font-size: 20px;
             font-family: 'FuturaLTCondensedBoldOblique';
+            a {
+                color: #777;
+                text-decoration: none;
+            }
         }
         .header-tap {
             display: flex;
