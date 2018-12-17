@@ -351,7 +351,7 @@ var meetArticle = function(req, res) {
                     author: req.query.name
                 },{
                     content: 0
-                },{sort: [['changeDate', -1]]}).then((response) => {
+                }).then((response) => {
                     if (!response) {
                         res.json({
                             msg: '还没写文章哦',
