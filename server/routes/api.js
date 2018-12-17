@@ -349,7 +349,7 @@ var meetArticle = function(req, res) {
                 Article.find({
                     author: req.query.name
                 },{
-                    // content: 0
+                    content: 0
                 }).then((response) => {
                     if (!response) {
                         res.json({
@@ -386,7 +386,7 @@ var listArticle = function(req, res) {
                 Article.find({
                     _id: req.query._id
                 },{
-                    content: 0
+                    // content: 0
                 }).then((response) => {
                     if (!response) {
                         res.json({
