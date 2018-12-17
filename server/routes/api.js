@@ -327,7 +327,7 @@ var setArticle = function(req, res) {
                         msg: {
                             status: 1,
                             msg: '创建成功',
-                            data: data,
+                            _id: data._id,
                         },
                     })
 
