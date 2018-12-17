@@ -1,11 +1,14 @@
 <template lang="html">
     <div class="header-nav">
         <div class="icon-home">
-            <span>LemonBlog</span>
+            <span><router-link :to="{ name: 'Home', params: {} }">LemonBlog</router-link></span>
         </div>
         <ul class="header-tap">
             <li>
-                文章
+                <router-link :to="{ name: 'Article', params: {} }">文章</router-link>
+            </li>
+            <li>
+                <router-link :to="{ name: 'Create', params: {} }">记录</router-link>
             </li>
             <li>
                 足迹
@@ -41,6 +44,10 @@ export default {
         line-height: 60px;
         color: #777;
         background-color: #fff;
+        a {
+            color: #777;
+            text-decoration: none;
+        }
         .icon-home {
             margin-left: 30px;
             font-size: 20px;
@@ -56,6 +63,10 @@ export default {
                 color: #777;
                 padding: 0 20px;
                 cursor: pointer;
+                a {
+                    color: #777;
+                    text-decoration: none;
+                }
             }
         }
     }
