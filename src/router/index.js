@@ -4,6 +4,7 @@ import HelloWorld from '@/components/HelloWorld'
 import Home from '@/components/home'
 import Create from '@/components/create'
 import Article from '@/components/article'
+import List from '@/components/list'
 
 Vue.use(Router)
 
@@ -23,6 +24,11 @@ export default new Router({
       path: '/article',
       name: 'Article',
       component: Article
+    },
+    {
+      path: '/list/:id',
+      name: 'List',
+      component: List
     },
   ]
 })
