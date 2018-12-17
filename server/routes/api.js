@@ -313,7 +313,7 @@ var setArticle = function(req, res) {
     //                 msg: err
     //             })
     //         } else {
-                art.save((err, date) => {
+                art.save((err, data) => {
                     if (err) {
                         res.json({
                             msg: {
@@ -326,7 +326,8 @@ var setArticle = function(req, res) {
                     res.json({
                         msg: {
                             status: 1,
-                            msg: '创建成功'
+                            msg: '创建成功',
+                            data: data,
                         },
                     })
 
