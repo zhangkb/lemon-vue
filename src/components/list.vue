@@ -1,12 +1,17 @@
 <template lang="html">
     <div class="list-body">
-        <div>
+        <div class="list-title">
             <h2>{{ title }}</h2>
-            <span>{{ author }}</span><span>{{ changeDate }}</span>
         </div>
-        <div v-html="content" class="list-code">
 
+        <div class="ql-container ql-snow">
+            <div class="ql-editor list-code" v-html="content">
+            </div>
         </div>
+        <p class="list-date"><span>{{ author }}</span><span>{{ changeDate }}</span></p>
+        <!-- <div v-html="content" class="list-code">
+
+        </div> -->
     </div>
 </template>
 
@@ -52,17 +57,32 @@ export default {
         margin: 40px auto;
         padding: 25px 40px;
         background-color: #fff;
+        .list-title {
+            border-bottom: 1px solid #e0e0e0;
+        }
         .list-code {
             padding: 25px 0;
+        }
+        .list-date {
+            display: flex;
+            justify-content:space-between;
+            align-items: center;
+            padding: 20px 40px 10px 40px;
+            border-top: 1px solid #e0e0e0;
         }
         h2 {
             color: #333;
             cursor: pointer;
             margin: 10px 0;
+            padding-bottom: 15px;
+            text-align: center;
         }
         p {
             line-height: 30px;
             color: #333;
+        }
+        .ql-snow {
+            border: none;
         }
     }
 </style>
