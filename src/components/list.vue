@@ -81,7 +81,7 @@ export default {
             line-height: 30px;
             color: #333;
         }
-        .ql-snow {
+        .ql-container.ql-snow {
             border: none;
         }
     }
