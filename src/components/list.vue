@@ -18,6 +18,7 @@
 <script>
 import axios from "axios";
 import qs from "qs";
+import mixin from './../assets/js/util.js'
 export default {
     name: 'Header',
     data () {
@@ -28,6 +29,7 @@ export default {
             changeDate: '',
         }
     },
+    mixins: [mixin],
     mounted() {
         this.listArticle();
     },
