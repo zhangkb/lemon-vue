@@ -1,6 +1,7 @@
 # lemon-vue
 
-> A Vue.js project
+> 个人网站项目
+
 
 ## Build Setup
 
