@@ -3,8 +3,11 @@
         <ul>
             <li v-for="item in article" @click="changeUrl(item._id)">
                 <h2>{{ item.title }}</h2>
-                <span>{{item.author }}</span>
-                <span>{{ item.changeDate }}</span>
+                <p>
+                    <span>{{ item.author }}</span>
+                    <span>{{ formatDate(item.changeDate) }}</span>
+                </p>
+
             </li>
         </ul>
     </div>
@@ -13,6 +16,7 @@
 <script>
 import axios from "axios";
 import qs from "qs";
+import mixin from './../assets/js/util.js'
 export default {
     name: 'Article',
     data () {
@@ -26,6 +30,7 @@ export default {
             ],
         }
     },
+    mixins: [mixin],
     mounted() {
         this.listArticle();
     },
@@ -71,6 +76,14 @@ export default {
                     color: #333;
                     cursor: pointer;
                     margin: 10px 0;
+                }
+                p {
+                    display: flex;
+                    justify-content: space-between;
+                    align-items: center;
+                }
+                span {
+                    color: #999;
                 }
             }
         }

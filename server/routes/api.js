@@ -302,6 +302,7 @@ var setArticle = function(req, res) {
         title: req.body.title,
         author: req.body.name,
         content: req.body.content,
+        imgUrl: req.body.img,
         changeDate: new Date()
     });
     console.log(req.body)

@@ -5,6 +5,7 @@ const Articles = new mongoose.Schema({
     author: String,
     content: String,
     changeDate: Date,
+    imgUrl: String,
 }, {
     collection: 'article'
 });

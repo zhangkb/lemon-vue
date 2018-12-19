@@ -42,7 +42,8 @@ export default {
                       name: 'foo',
                       action: 'http://120.79.214.223:3000/upload',
                       response: (res) => {
-                        return 'http://120.79.214.223:3000' + res.info
+                          this.imgUrl = 'http://120.79.214.223:3000' + res.info;
+                          return 'http://120.79.214.223:3000' + res.info
                       }
                   },
                   toolbar: {
@@ -72,6 +73,7 @@ export default {
 
             },
             artTitle: '',
+            imgUrl: '',
         }
     },
     computed: {
@@ -101,6 +103,7 @@ export default {
               name: '小可爱',
               title: this.artTitle,
               content: this.content,
+              img: this.imgUrl,
             })).then((data) => {
               console.log(data)
             //   console.log(data.data.data)
