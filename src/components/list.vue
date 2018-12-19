@@ -8,7 +8,7 @@
             <div class="ql-editor list-code" v-html="content">
             </div>
         </div>
-        <p class="list-date"><span>{{ author }}</span><span>{{ changeDate }}</span></p>
+        <p class="list-date"><span>{{ author }}</span><span>{{ formatDate(changeDate) }}</span></p>
         <!-- <div v-html="content" class="list-code">
 
         </div> -->
