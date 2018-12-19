@@ -298,6 +298,7 @@ var upload = function (req, res) {
 }
 var setArticle = function(req, res) {
     res.header("Access-Control-Allow-Origin", "*");
+    console.log(req.body)
     const art = new Article({
         title: req.body.title,
         author: req.body.name,
@@ -305,7 +306,7 @@ var setArticle = function(req, res) {
         imgUrl: req.body.img,
         changeDate: new Date()
     });
-    console.log(req.body)
+
     // new Promise((resolve, reject) => {
     //     jwt.verify(token, config.secret, function(err, decoded) {
     //         if (err) {

@@ -2,12 +2,12 @@
     <div class="article-body">
         <ul>
             <li v-for="item in article" @click="changeUrl(item._id)">
+                <img :src="item.imgUrl" alt="">
                 <h2>{{ item.title }}</h2>
                 <p>
                     <span>{{ item.author }}</span>
                     <span>{{ formatDate(item.changeDate) }}</span>
                 </p>
-
             </li>
         </ul>
     </div>
@@ -65,6 +65,7 @@ export default {
             align-items: center;
             margin-top: 40px;
             li {
+                position: relative;
                 width: 100%;
                 padding: 25px;
                 background: #fff;
@@ -72,6 +73,15 @@ export default {
                 border: 1px solid #e0e0e0;
                 cursor: pointer;
                 margin: 20px 0;
+                padding-left: 100px;
+                img {
+                    position: absolute;
+                    display: block;
+                    left: 10px;;
+                    top: 50%;
+                    width: 80px;
+                    transform: translateY(-50%);
+                }
                 h2 {
                     color: #333;
                     cursor: pointer;
