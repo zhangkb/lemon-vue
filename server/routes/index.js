@@ -33,4 +33,5 @@ module.exports = function(app) {
     app.post("/create", api.setArticle);
     app.get("/list", api.meetArticle);
     app.get("/detail",api.listArticle);
+    app.get("/count", api.countNum);
 }

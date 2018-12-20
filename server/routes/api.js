@@ -2,6 +2,7 @@ const jwt = require('jsonwebtoken');
 const config = require('../config/config');
 const User = require('./../model/user');
 const Article = require('./../model/article');
+const Count = require('./../model/count');
 const mongoose = require('mongoose')
 
 
@@ -412,6 +413,44 @@ var listArticle = function(req, res) {
     // });
 
 }
+var get_client_ip = function (req) {
+    var ipStr = req.headers['x-forwarded-for'] ||
+        req.ip ||
+        req.connection.remoteAddress ||
+        req.socket.remoteAddress ||
+        req.connection.socket.remoteAddress || '';
+    var ipReg = /\d{1,3}\.\d{1,3}\.\d{1,3}\.\d{1,3}/;
+    if (ipStr.split(',').length > 0) {
+        ipStr = ipStr.split(',')[0]
+    }
+    var ip = ipReg.exec(ipStr);
+    return ip[0];
+};
+var countNum = function (req, res) {
+    var ipStr = req.headers['x-forwarded-for'] ||
+        req.ip ||
+        req.connection.remoteAddress ||
+        req.socket.remoteAddress ||
+        req.connection.socket.remoteAddress || '';
+    console.log(ipStr);
+    const count = new Count({
+        location: get_client_ip(req),
+        loginDate: new Date()
+    });
+    // console.log(req);
+    count.save((err, data) => {
+        if (err) {
+            res.json({
+                msg: '出错了！',
+                data: err,
+            });
+        }
+        res.json({
+            msg: '成功',
+            status: 1,
+        });
+    });
+};
 module.exports = {
     logout: logout,
     setUser: setUser,
@@ -422,5 +461,6 @@ module.exports = {
     upload: upload,
     setArticle: setArticle,
     meetArticle: meetArticle,
-    listArticle: listArticle
+    listArticle: listArticle,
+    countNum: countNum
 };
