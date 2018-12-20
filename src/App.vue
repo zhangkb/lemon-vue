@@ -9,6 +9,8 @@
 <script>
 import HeaderNav from './components/header'
 import FooterNav from './components/footer'
+import axios from "axios";
+import qs from "qs";
 export default {
     name: 'App',
     data () {
@@ -19,6 +21,16 @@ export default {
     components: {
         HeaderNav,
         FooterNav,
+    },
+    mounted () {
+        this.countNum();
+    },
+    methods: {
+        countNum () {
+            axios.get("http://120.79.214.223:3000/count",{params:{}}).then((data) => {
+                console.log(data);
+            })
+        },
     }
 }
 </script>
