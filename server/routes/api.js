@@ -4,7 +4,7 @@ const User = require('./../model/user');
 const Article = require('./../model/article');
 const Count = require('./../model/count');
 const mongoose = require('mongoose')
-
+const request = require('request');
 
 /**
  * 登录
@@ -427,29 +427,38 @@ var get_client_ip = function (req) {
     return ip[0];
 };
 var countNum = function (req, res) {
+
     var ipStr = req.headers['x-forwarded-for'] ||
         req.ip ||
         req.connection.remoteAddress ||
         req.socket.remoteAddress ||
         req.connection.socket.remoteAddress || '';
-    console.log(ipStr);
-    const count = new Count({
-        location: get_client_ip(req),
-        loginDate: new Date()
-    });
-    // console.log(req);
-    count.save((err, data) => {
-        if (err) {
+    request.get({
+        url: 'http://ip.taobao.com/service/getIpInfo.php?ip='+get_client_ip(req),
+    }, function(err, resp, body) {
+        body = JSON.parse(body)
+        // var data = body.data;
+        // res.json(data)
+        const count = new Count({
+            location: get_client_ip(req),
+            area: body.data.country + body.data.city,
+            loginDate: new Date()
+        });
+        // console.log(req);
+        count.save((err, data) => {
+            if (err) {
+                res.json({
+                    msg: '出错了！',
+                    data: err,
+                });
+            }
             res.json({
-                msg: '出错了！',
-                data: err,
+                msg: '成功',
+                status: 1,
             });
-        }
-        res.json({
-            msg: '成功',
-            status: 1,
         });
     });
+
 };
 module.exports = {
     logout: logout,
