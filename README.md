@@ -16,7 +16,11 @@
 1. 优化文章数据结构表添加图片地址字段作为缩略图展示
 2. 部分UI样式修改优化
 **********
-
+2018-12-21
+1. 添加用户访问数据表，记录访问地址 以及ip信息
+2. 添加request 模块，获取访问信息
+3. 使用[http://ip.taobao.com/service/getIpInfo.php?ip=](http://ip.taobao.com/service/getIpInfo.php?ip=)获取ip地址信息
+**********
 网站地址：[www.lemontea.xin](http://www.lemontea.xin)
 ## Build Setup
 
