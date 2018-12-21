@@ -441,7 +441,7 @@ var countNum = function (req, res) {
         // res.json(data)
         const count = new Count({
             location: get_client_ip(req),
-            area: body.data.country + body.data.city,
+            area: body.data.country + '-' + body.data.city,
             loginDate: new Date()
         });
         // console.log(req);
