@@ -17,7 +17,8 @@
                 学习地图
             </li>
             <li>
-                Me
+                <router-link :to="{ name: 'FootPrint', params: {} }">Me</router-link>
+
             </li>
         </ul>
     </div>

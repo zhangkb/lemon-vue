@@ -5,6 +5,7 @@ import Home from '@/components/home'
 import Create from '@/components/create'
 import Article from '@/components/article'
 import List from '@/components/list'
+import FootPrint from '@/components/footPrint'
 
 Vue.use(Router)
 
@@ -29,6 +30,11 @@ export default new Router({
       path: '/list/:id',
       name: 'List',
       component: List
+    },
+    {
+      path: '/footprint',
+      name: 'FootPrint',
+      component: FootPrint
     },
   ]
 })
