@@ -29,7 +29,7 @@ import qs from "qs";
 import {quillEditor, Quill} from 'vue-quill-editor'
 import {container, ImageExtend, QuillWatch} from 'quill-image-extend-module'
 Quill.register('modules/ImageExtend', ImageExtend);
-
+var imgUrl = '';
 export default {
     name: 'Create',
     data () {
@@ -42,7 +42,9 @@ export default {
                       name: 'foo',
                       action: 'http://120.79.214.223:3000/upload',
                       response: (res) => {
-                        return 'http://120.79.214.223:3000' + res.info
+                          // debugger
+                          imgUrl = 'http://120.79.214.223:3000' + res.info;
+                          return 'http://120.79.214.223:3000' + res.info
                       }
                   },
                   toolbar: {
@@ -96,13 +98,16 @@ export default {
             console.log('editor ready!', editor)
         },
         createArticle () {
-            debugger
+            // debugger
+            // 120.79.214.223
             axios.post("http://120.79.214.223:3000/create", qs.stringify({
               name: '小可爱',
               title: this.artTitle,
               content: this.content,
+              img: imgUrl,
             })).then((data) => {
               console.log(data)
+              imgUrl = '';
             //   console.log(data.data.data)
                 if (data.data.msg && data.data.msg.status === 1) {
                     window.location.href = 'http://lemontea.xin/#/list/'+ data.data.msg._id;

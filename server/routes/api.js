@@ -2,8 +2,9 @@ const jwt = require('jsonwebtoken');
 const config = require('../config/config');
 const User = require('./../model/user');
 const Article = require('./../model/article');
+const Count = require('./../model/count');
 const mongoose = require('mongoose')
-
+const request = require('request');
 
 /**
  * 登录
@@ -298,13 +299,15 @@ var upload = function (req, res) {
 }
 var setArticle = function(req, res) {
     res.header("Access-Control-Allow-Origin", "*");
+    console.log(req.body)
     const art = new Article({
         title: req.body.title,
         author: req.body.name,
         content: req.body.content,
+        imgUrl: req.body.img,
         changeDate: new Date()
     });
-    console.log(req.body)
+
     // new Promise((resolve, reject) => {
     //     jwt.verify(token, config.secret, function(err, decoded) {
     //         if (err) {
@@ -351,7 +354,7 @@ var meetArticle = function(req, res) {
                     author: req.query.name
                 },{
                     content: 0
-                }).then((response) => {
+                }).sort({changeDate: -1}).then((response) => {
                     if (!response) {
                         res.json({
                             msg: '还没写文章哦',
@@ -410,6 +413,53 @@ var listArticle = function(req, res) {
     // });
 
 }
+var get_client_ip = function (req) {
+    var ipStr = req.headers['x-forwarded-for'] ||
+        req.ip ||
+        req.connection.remoteAddress ||
+        req.socket.remoteAddress ||
+        req.connection.socket.remoteAddress || '';
+    var ipReg = /\d{1,3}\.\d{1,3}\.\d{1,3}\.\d{1,3}/;
+    if (ipStr.split(',').length > 0) {
+        ipStr = ipStr.split(',')[0]
+    }
+    var ip = ipReg.exec(ipStr);
+    return ip[0];
+};
+var countNum = function (req, res) {
+
+    var ipStr = req.headers['x-forwarded-for'] ||
+        req.ip ||
+        req.connection.remoteAddress ||
+        req.socket.remoteAddress ||
+        req.connection.socket.remoteAddress || '';
+    request.get({
+        url: 'http://ip.taobao.com/service/getIpInfo.php?ip='+get_client_ip(req),
+    }, function(err, resp, body) {
+        body = JSON.parse(body)
+        // var data = body.data;
+        // res.json(data)
+        const count = new Count({
+            location: get_client_ip(req),
+            area: body.data.country + '-' + body.data.city,
+            loginDate: new Date()
+        });
+        // console.log(req);
+        count.save((err, data) => {
+            if (err) {
+                res.json({
+                    msg: '出错了！',
+                    data: err,
+                });
+            }
+            res.json({
+                msg: '成功',
+                status: 1,
+            });
+        });
+    });
+
+};
 module.exports = {
     logout: logout,
     setUser: setUser,
@@ -420,5 +470,6 @@ module.exports = {
     upload: upload,
     setArticle: setArticle,
     meetArticle: meetArticle,
-    listArticle: listArticle
+    listArticle: listArticle,
+    countNum: countNum
 };
