@@ -17,8 +17,10 @@
                 学习地图
             </li>
             <li>
+              <router-link :to="{ name: 'Count', params: {} }">统计</router-link>
+          </li>
+            <li>
                 <router-link :to="{ name: 'FootPrint', params: {} }">Me</router-link>
-
             </li>
         </ul>
     </div>

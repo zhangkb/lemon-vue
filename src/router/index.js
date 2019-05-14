@@ -6,6 +6,7 @@ import Create from '@/components/create'
 import Article from '@/components/article'
 import List from '@/components/list'
 import FootPrint from '@/components/footPrint'
+import Count from '@/components/count'
 
 Vue.use(Router)
 
@@ -35,6 +36,11 @@ export default new Router({
       path: '/footprint',
       name: 'FootPrint',
       component: FootPrint
+    },
+    {
+      path: '/count',
+      name: 'Count',
+      component: Count
     },
   ]
 })
