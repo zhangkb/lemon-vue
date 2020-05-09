@@ -7,6 +7,7 @@ import Article from '@/components/article'
 import List from '@/components/list'
 import FootPrint from '@/components/footPrint'
 import Count from '@/components/count'
+import ThreeJs from '@/components/ThreeJs'
 
 Vue.use(Router)
 
@@ -41,6 +42,11 @@ export default new Router({
       path: '/count',
       name: 'Count',
       component: Count
+    },
+    {
+      path: '/threeJs',
+      name: 'ThreeJs',
+      component: ThreeJs
     },
   ]
 })

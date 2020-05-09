@@ -2,7 +2,14 @@
   <div class="count-body">
       <input type="file" ref="upload" accept=".xls,.xlsx" class="outputlist_upload">
       <button @click="setCharts">生成图表</button>
-      <v-chart :options="option" style="width: 600px;height: 600px"></v-chart>
+      <div class="layout-box">
+        <div class="layout-left">
+            <v-chart :options="option" style="width: 600px;height: 600px"></v-chart>
+        </div>
+        <div class="layout-right">
+          <v-chart :options="option" style="width: 600px;height: 600px"></v-chart>
+        </div>
+      </div>
   </div>
 </template>
 
@@ -30,6 +37,18 @@
               type: 'value'
             },
             series: []
+          },
+          funnelOption: {
+            tooltip: {
+                trigger: 'item',
+                formatter: "{a} <br/>{b} : {c}%"
+            },
+            legend: {
+                orient: 'vertical',
+
+                left: 'left',
+                data: ['优秀率','及格率','满分']
+            },
           }
         }
     },
@@ -143,7 +162,7 @@
         })
         return result;
       },
-      setCharts(){
+      setCharts(){ // 生成图表
         let series = [];
         for (let index = 0; index < this.excelArr.length; index++) {
           const element = this.excelArr[index];
@@ -168,12 +187,13 @@
         })
         // this.option.xAxis.data = xAxis;
         this.option.series = series;
-      }
+      },
     },
 }
 </script>
 
 <style lang="less">
+  @import '../assets/css/common.less';
   .count-body {
       width: 1200px;
       margin: 40px auto;
