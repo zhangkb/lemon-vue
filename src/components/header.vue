@@ -15,7 +15,8 @@
                 <router-link :to="{ name: 'ThreeJs', params: {} }">足迹</router-link>
             </li>
             <li>
-                学习地图
+
+                <router-link :to="{ name: 'PointJs', params: {} }">学习地图</router-link>
             </li>
             <li>
               <router-link :to="{ name: 'Count', params: {} }">统计</router-link>

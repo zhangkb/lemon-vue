@@ -8,6 +8,13 @@ import List from '@/components/list'
 import FootPrint from '@/components/footPrint'
 import Count from '@/components/count'
 import ThreeJs from '@/components/ThreeJs'
+import PointJs from '@/page/point'
+import GeometryJs from '@/page/Geometry'
+import SnowJs from '@/page/snow'
+import ShadowJs from '@/page/shadow'
+import OverallView from '@/page/overallView'
+
+import { Geometry } from 'three'
 
 Vue.use(Router)
 
@@ -47,6 +54,31 @@ export default new Router({
       path: '/threeJs',
       name: 'ThreeJs',
       component: ThreeJs
+    },
+    {
+      path: '/pointJs',
+      name: 'PointJs',
+      component: PointJs
+    },
+    {
+      path: '/geometeryJs',
+      name: 'GeometryJs',
+      component: GeometryJs
+    },
+    {
+      path: '/snowJs',
+      name: 'SnowJs',
+      component: SnowJs
+    },
+    {
+      path: '/shadowJs',
+      name: 'ShadowJs',
+      component: ShadowJs
+    },
+    {
+      path: '/overallView',
+      name: 'OverallView',
+      component: OverallView
     },
   ]
 })
